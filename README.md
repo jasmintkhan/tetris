@@ -1,2 +1,3 @@
-# tetris-ai
-A Tetris game with an AI opponent built using JavaScript and Python
+# tetris
+A Tetris game built using JavaScript.
+Later, will include an AI opponent
