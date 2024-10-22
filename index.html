@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid">
+        <div class="left-column">
+            <div class="top">
+                <h1>TETRIS</h1>
+                <p>Jasmin Khan</p>
+            </div>
+            <div class="bottom">
+                <p>Score: <span id="score">0</span></p>
+                <p>Level: <span id="level">0</span></p>
+                <p>Lines: <span id="lines">0</span></p>
+            </div>
+        </div>
+        <div class="middle">
+            <canvas id="board" class="game-board"></canvas>
+            <div id="game-over-message" style="display:none; font-family: 'Press Start 2P', cursive; color:red; position: absolute; top: 20%; font-size: 24px; background-color: black; padding: 10px;">
+                GAME OVER
+            </div>
+            <div id="pause-message" style="display:none; font-family: 'Press Start 2P', cursive; color:yellow; position: absolute; top: 20%; font-size: 24px; background-color: black; padding: 10px;">
+                PAUSED
+            </div>
+            <div id="quit-buttons" class="quit-buttons" style="display:none;">
+                <button class="quit-button" onclick="quitGame()">Quit</button>
+            </div>
+            <div id="play-buttons" class="play-buttons">
+                <h2>Play...</h2>
+                <button class="play-button" onclick="playSolo()">Solo</button>
+                <button class="play-button" onclick="playVsAI()">vs AI</button>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="top">
+                <p>Next</p>
+                <canvas id="next" class="next"></canvas>
+                <p>Hold</p>
+                <canvas id="hold" class="hold"></canvas>
+            </div>
+            <div class="bottom">
+                <button class="option-button" id = "option-button" onclick="openOptionsModal()">Options</button>
+            </div>
+        </div>
+    </div>
+        
+    <script src="constants.js"></script>
+    <script src="board.js"></script>
+    <script src="piece.js"></script>
+    <script src="game.js"></script>
+    <script src="options.js"></script>
+
+    <div class="modal-overlay" id="modal-overlay" style="display:none;"></div>
+    <div id="options-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeOptionsModal()">&times;</span>
+          <h2>Options</h2>
+          <div class="options-content">
+            <button onclick="showHowToPlay()">How to Play</button>
+            <button onclick="showSettings()">Settings</button>
+          </div>
+          <!-- How to Play Section -->
+          <div id="how-to-play" class="options-section" style="display:none;">
+            <h3>How to Play</h3>
+            <p><strong>Welcome to Tetris!</strong></p>
+            <p><strong>Goal:</strong> Clear as many lines as possible.</p>
+            <p><strong>Clear Lines:</strong> Maneuver falling Tetrominos to fit in the matrix. To clear a line, fill every square within a single row.</p>
+            <p><strong>Score Points:</strong> Earn points by clearing lines. Clear multiple lines at once for extra points.</p>
+            <p><strong>Levels:</strong> The higher the level, the faster Tetrominos fall.</p>
+            <p><strong>Ghost Piece:</strong> Use as a guide to determine best spot for falling Tetromino.</p>
+            <p><strong>Next Queue:</strong> Preview the upcoming Tetromino to plan ahead and strategize.</p>
+            <p><strong>Hold Queue:</strong> Store a falling Tetromino to use later.</p>
+            <p><strong>Game Over:</strong> Stack tetrominos too high and it's game over!</p>
+            <br>
+            <h3>Controls</h3>
+            <p><strong>Move:</strong> Use the <em>Left</em> and <em>Right</em> arrow keys to move the Tetrimino.</p>
+            <p><strong>Rotate:</strong> Use the <em>Up</em> arrow key to rotate the Tetrimino and Ghost Piece.</p>
+            <p><strong>Drop:</strong> Use the <em>Down</em> arrow key for a soft drop and the <em>Space</em> key for a hard drop.</p>
+            <br>
+            <h3>Scoring</h3>
+            <p><strong>Soft Drop:</strong> 1 point x cells moved down.</p>
+            <p><strong>Hard Drop:</strong> 2 points x cells moved down.</p>
+            <p><strong>Line Clear:</strong> Points for clearing lines:
+                <ul>
+                <li><strong>Single Line:</strong> 100 points</li>
+                <li><strong>Double Line:</strong> 300 points</li>
+                <li><strong>Triple Line:</strong> 500 points</li>
+                <li><strong>Tetris (Four Lines):</strong> 800 points</li>
+                </ul>
+            </p>
+            <p><strong>Back-to-Back Tetrises:</strong> Earn an additional combo multiplier (e.g., 1.5x points).</p>
+            <p><strong>Level Multiplier:</strong> All points are multiplied by the current level (starting at level 1).</p>
+          </div>
+          <!-- Settings Section -->
+          <div id="settings" class="options-section" style="display:none;">
+            <h3>Settings</h3>
+            <p>Customize your key bindings:</p>
+            <label for="left-key">Move Left:</label>
+            <input id="left-key" type="text" value="ArrowLeft" readonly onclick="customizeKey('left')" />
+            <br>
+            <label for="right-key">Move Right:</label>
+            <input id="right-key" type="text" value="ArrowRight" readonly onclick="customizeKey('right')" />
+            <br>
+            <label for="down-key">Move Down:</label>
+            <input id="down-key" type="text" value="ArrowDown" readonly onclick="customizeKey('down')" />
+            <br>
+            <label for="up-key">Rotate:</label>
+            <input id="up-key" type="text" value="ArrowUp" readonly onclick="customizeKey('up')" />
+            <br>
+            <label for="hold-key">Hold:</label>
+            <input id="hold-key" type="text" value="KeyC" readonly onclick="customizeKey('hold')" />
+            <br>
+            <label for="hardDrop-key">Hard Drop:</label>
+            <input id="hardDrop-key" type="text" value="Space" readonly onclick="customizeKey('hardDrop')" />
+            <br>
+            <label for="pause-key">Pause:</label>
+            <input id="pause-key" type="text" value="Escape" readonly onclick="customizeKey('pause')" />
+            <br>
+            <br>
+            <button onclick="revertToDefaultKeys()">Revert to Default</button>
+          </div>
+          
+        </div>
+      </div>
+      
+</body>
+</html>

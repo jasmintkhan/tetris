@@ -1,0 +1,174 @@
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+
+body, html {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 200px 320px 220px;
+  justify-content: center;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.top {
+  margin-top: 20px;
+}
+
+.bottom {
+  margin-bottom: 20px;
+}
+
+.game-board {
+  border: solid 2px;
+  object-fit: contain;
+}
+
+.next, .hold {
+    border: solid 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.play-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+
+.play-button {
+  background-color: #4caf50;
+  font-size: 16px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+
+.quit-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quit-button {
+  background-color: red;
+  font-size: 16px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.option-button {
+    background-color: #6c6666;
+    font-size: 16px;
+    padding: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white; /* Solid white background for the box */
+  padding: 15px;
+  width: auto;
+  height: auto; /* Adjust based on content */
+  border: 2px solid black;
+  z-index: 1100; /* Ensure it’s above the overlay */
+  box-sizing: border-box;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  font-family: 'Press Start 2P', cursive;
+  box-sizing: border-box;
+}
+
+.close-button {
+  color: red;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.options-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.options-section {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  margin-top: 20px;
+  display: none;
+}
+
+button {
+  background-color: #6c6666;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+}
