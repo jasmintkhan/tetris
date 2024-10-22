@@ -2,6 +2,8 @@
 
 A browser-based implementation of the classic **Tetris** game, developed using JavaScript, HTML5, and CSS. This version includes modern features like **custom key bindings**, real-time **piece movement**, and a dynamic **scoring system**. While the game already includes many Tetris mechanics, an AI mode is in development and will be coming soon!
 
+<img width="1440" alt="Screenshot 2024-10-22 at 9 54 20 AM" src="https://github.com/user-attachments/assets/ad0c278b-8571-4f7a-adab-76fed8cfd29c">
+
 ## Features
 
 ### 1. **Game Mechanics**
@@ -15,6 +17,8 @@ A browser-based implementation of the classic **Tetris** game, developed using J
 ### 2. **Custom Key Bindings**
 - **Rebindable Controls:** Players can customize their movement keys (left, right, down, rotate, hold, drop, and pause). This allows for a personalized and comfortable gaming experience.
 - **Reset to Defaults:** The controls can be reset to their default bindings at any time.
+- 
+<img width="1440" alt="Screenshot 2024-10-22 at 9 55 16 AM" src="https://github.com/user-attachments/assets/c3eb2232-eb0b-4810-8c6c-98ad4ccb92c7">
 
 ### 3. **Scoring System**
 - **Points:** Points are awarded for different actions:
@@ -32,9 +36,13 @@ A browser-based implementation of the classic **Tetris** game, developed using J
 - **Pause and Resume:** The game can be paused and resumed.
 - **Game Over:** The game ends if tetrominoes stack above the top of the grid.
 - **New Game:** Players can restart at any time.
+  
+<img width="1440" alt="Screenshot 2024-10-22 at 9 55 48 AM" src="https://github.com/user-attachments/assets/7d5ce114-1e4e-4229-be8c-9945cae7db59">
 
 ### 5. **Planned Features**
 - **AI Mode:** A challenging AI opponent is in development, allowing players to test their skills against an advanced computer player.
+
+<img width="1440" alt="Screenshot 2024-10-22 at 9 56 07 AM" src="https://github.com/user-attachments/assets/cd239d81-1dfe-4402-b987-f5638a7a07bf">
 
 ## Setup and Installation
 1. **Clone the repository:**
