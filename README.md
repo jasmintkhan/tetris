@@ -14,6 +14,8 @@ A browser-based implementation of the classic **Tetris** game, developed using J
 - **Hold Queue:** Players can hold one tetromino and swap it out later.
 - **Next Piece Preview:** The next tetromino to fall is shown to help players plan ahead.
 
+https://github.com/user-attachments/assets/2c44bb2a-54b0-4333-8d11-fc942449a6f5
+
 ### 2. **Custom Key Bindings**
 - **Rebindable Controls:** Players can customize their movement keys (left, right, down, rotate, hold, drop, and pause). This allows for a personalized and comfortable gaming experience.
 - **Reset to Defaults:** The controls can be reset to their default bindings at any time.
