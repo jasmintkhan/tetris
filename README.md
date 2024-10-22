@@ -17,7 +17,7 @@ A browser-based implementation of the classic **Tetris** game, developed using J
 ### 2. **Custom Key Bindings**
 - **Rebindable Controls:** Players can customize their movement keys (left, right, down, rotate, hold, drop, and pause). This allows for a personalized and comfortable gaming experience.
 - **Reset to Defaults:** The controls can be reset to their default bindings at any time.
-- 
+  
 <img width="1440" alt="Screenshot 2024-10-22 at 9 55 16 AM" src="https://github.com/user-attachments/assets/c3eb2232-eb0b-4810-8c6c-98ad4ccb92c7">
 
 ### 3. **Scoring System**
@@ -38,6 +38,8 @@ A browser-based implementation of the classic **Tetris** game, developed using J
 - **New Game:** Players can restart at any time.
   
 <img width="1440" alt="Screenshot 2024-10-22 at 9 55 48 AM" src="https://github.com/user-attachments/assets/7d5ce114-1e4e-4229-be8c-9945cae7db59">
+
+<img width="1440" alt="Screenshot 2024-10-22 at 9 58 28 AM" src="https://github.com/user-attachments/assets/52c3113d-d91c-4994-9904-e906c88c8598">
 
 ### 5. **Planned Features**
 - **AI Mode:** A challenging AI opponent is in development, allowing players to test their skills against an advanced computer player.
