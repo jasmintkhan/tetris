@@ -3,12 +3,31 @@
  * 
  * handles the options modal logic for the game
  * allows users to open/close the options modal, switch between settings and instructions,
- *      customize key bindings, and reset keys to their default settings
+ *      customize key bindings, toggle dark mode, and reset keys to their default settings
  */
 
 // ensure event listener is added when the DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('option-button').addEventListener('click', openOptionsModal);
+
+    // event listener for toggling dark mode
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // save the theme preference to localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // load the saved theme from localStorage on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
 });
 
 // function to open the options modal and overlay
@@ -103,9 +122,15 @@ function revertToDefaultKeys() {
     document.getElementById('down-key').value = DEFAULT_KEY.DOWN;
     document.getElementById('up-key').value = DEFAULT_KEY.UP;
     document.getElementById('hold-key').value = DEFAULT_KEY.HOLD;
-    document.getElementById('drop-key').value = DEFAULT_KEY.SPACE;
+    document.getElementById('hardDrop-key').value = DEFAULT_KEY.DROP;
     document.getElementById('pause-key').value = DEFAULT_KEY.ESC;
 
     // update moves with the default key bindings
     updateMoves();
+
+    // reset to light mode
+    if (document.body.classList.contains('dark-mode')) {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');  // store light mode as the default theme
+    }
 }
