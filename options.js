@@ -122,7 +122,7 @@ function revertToDefaultKeys() {
     document.getElementById('down-key').value = DEFAULT_KEY.DOWN;
     document.getElementById('up-key').value = DEFAULT_KEY.UP;
     document.getElementById('hold-key').value = DEFAULT_KEY.HOLD;
-    document.getElementById('hardDrop-key').value = DEFAULT_KEY.DROP;
+    document.getElementById('hardDrop-key').value = DEFAULT_KEY.SPACE;
     document.getElementById('pause-key').value = DEFAULT_KEY.ESC;
 
     // update moves with the default key bindings
