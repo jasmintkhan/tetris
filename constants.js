@@ -79,7 +79,7 @@ const DEFAULT_KEY = {
   LEFT: 'ArrowLeft',
   RIGHT: 'ArrowRight',
   DOWN: 'ArrowDown',
-  DROP: 'Space',
+  SPACE: 'Space',
   UP: 'ArrowUp',
   ESC: 'Escape',
   HOLD: 'KeyC',
