@@ -19,6 +19,32 @@ body.dark-mode, html.dark-mode {
   color: white;
 }
 
+#game-over-message, #pause-message {
+  display: none;
+  font-family: 'Press Start 2P', cursive;
+  position: absolute;
+  top: 20%;
+  font-size: 24px;
+  padding: 10px;
+}
+
+/* Light mode styles (default) */
+#game-over-message {
+  color: red;
+  background-color: black;
+}
+
+#pause-message {
+  color: rgb(255, 208, 0);
+  background-color: black;
+}
+
+/* Dark mode styles */
+body.dark-mode #game-over-message,
+body.dark-mode #pause-message {
+  background-color: white;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 200px 320px 220px;
@@ -87,7 +113,7 @@ body.dark-mode, html.dark-mode {
 
 body.dark-mode .play-button {
   background-color: #4caf50; 
-  color: black;
+  color: white;
 }
 
 
@@ -102,6 +128,13 @@ body.dark-mode .play-button {
 }
 
 .quit-button {
+  background-color: red;
+  font-size: 16px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+body.dark-mode .quit-button {
   background-color: red;
   font-size: 16px;
   padding: 15px;
@@ -180,6 +213,7 @@ body.dark-mode .modal-content {
   padding: 10px;
   margin-top: 20px;
   display: none;
+  font-size: 14px;
 }
 
 button {
@@ -223,4 +257,24 @@ body.dark-mode input[type="text"] {
   background-color: #333; 
   color: white;
   border: 1px solid white;
+}
+
+#dark-mode-toggle, #revert-default{
+  width: 150px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; 
+  gap: 10px; 
+}
+
+button {
+  flex: 1; 
+  background-color: #6c6666;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center; 
 }
