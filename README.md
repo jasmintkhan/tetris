@@ -1,6 +1,6 @@
 # Tetris
 
-A browser-based implementation of the classic **Tetris** game, developed using JavaScript, HTML5, and CSS. This version includes modern features like **custom key bindings**, real-time **piece movement**, and a dynamic **scoring system**. While the game already includes many Tetris mechanics, an AI mode is in development and will be coming soon!
+A browser-based implementation of the classic **Tetris** game, developed using JavaScript, HTML5, and CSS. This version includes modern features like **custom key bindings**, real-time **piece movement**, a dynamic **scoring system**, and a **dark mode toggle**. While the game already includes many Tetris mechanics, an AI mode is in development and will be coming soon!
 
 <img width="1440" alt="Screenshot 2024-10-22 at 9 54 20 AM" src="https://github.com/user-attachments/assets/ad0c278b-8571-4f7a-adab-76fed8cfd29c">
 
@@ -20,9 +20,15 @@ https://github.com/user-attachments/assets/2c44bb2a-54b0-4333-8d11-fc942449a6f5
 - **Rebindable Controls:** Players can customize their movement keys (left, right, down, rotate, hold, drop, and pause). This allows for a personalized and comfortable gaming experience.
 - **Reset to Defaults:** The controls can be reset to their default bindings at any time.
   
-<img width="1440" alt="Screenshot 2024-10-22 at 9 55 16 AM" src="https://github.com/user-attachments/assets/c3eb2232-eb0b-4810-8c6c-98ad4ccb92c7">
+<img width="1440" alt="Screenshot 2024-10-24 at 2 39 28 PM" src="https://github.com/user-attachments/assets/fe317e02-12bd-4dcb-9430-f117d42a486e">
 
-### 3. **Scoring System**
+### 3. **Dark Mode**
+- **Dark Mode Option:** Players can toggle between light and dark modes via a button in settings. This feature provides a more comfortable viewing experience in low-light environments.
+- **Theme Persistence:** The game remembers your dark mode preference between sessions using `localStorage`.
+  
+<img width="1440" alt="Screenshot 2024-10-24 at 2 38 24 PM" src="https://github.com/user-attachments/assets/140629c8-0328-4c3b-87ce-f81db025551e">
+
+### 4. **Scoring System**
 - **Points:** Points are awarded for different actions:
   - **Soft Drop:** 1 point per cell.
   - **Hard Drop:** 2 points per cell.
@@ -34,7 +40,7 @@ https://github.com/user-attachments/assets/2c44bb2a-54b0-4333-8d11-fc942449a6f5
 - **Combos:** Bonus points are awarded for back-to-back Tetrises.
 - **Level Progression:** The game speeds up as players clear more lines. Levels increase every 10 cleared lines, with each level speeding up tetromino drops.
 
-### 4. **Game States**
+### 5. **Game States**
 - **Pause and Resume:** The game can be paused and resumed.
 - **Game Over:** The game ends if tetrominoes stack above the top of the grid.
 - **New Game:** Players can restart at any time.
@@ -43,7 +49,7 @@ https://github.com/user-attachments/assets/2c44bb2a-54b0-4333-8d11-fc942449a6f5
 
 <img width="1440" alt="Screenshot 2024-10-22 at 9 58 28 AM" src="https://github.com/user-attachments/assets/52c3113d-d91c-4994-9904-e906c88c8598">
 
-### 5. **Planned Features**
+### 6. **Planned Features**
 - **AI Mode:** A challenging AI opponent is in development, allowing players to test their skills against an advanced computer player.
 
 <img width="1440" alt="Screenshot 2024-10-22 at 9 56 07 AM" src="https://github.com/user-attachments/assets/cd239d81-1dfe-4402-b987-f5638a7a07bf">
