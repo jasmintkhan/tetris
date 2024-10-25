@@ -21,10 +21,10 @@
         </div>
         <div class="middle">
             <canvas id="board" class="game-board"></canvas>
-            <div id="game-over-message" style="display:none; font-family: 'Press Start 2P', cursive; color:red; position: absolute; top: 20%; font-size: 24px; background-color: black; padding: 10px;">
+            <div id="game-over-message">
                 GAME OVER
             </div>
-            <div id="pause-message" style="display:none; font-family: 'Press Start 2P', cursive; color:yellow; position: absolute; top: 20%; font-size: 24px; background-color: black; padding: 10px;">
+            <div id="pause-message">
                 PAUSED
             </div>
             <div id="quit-buttons" class="quit-buttons" style="display:none;">
@@ -122,10 +122,10 @@
             <input id="pause-key" type="text" value="Escape" readonly onclick="customizeKey('pause')" />
             <br>
             <br>
-            <button id="dark-mode-toggle">Toggle Dark Mode</button>
-            <br>
-            <br>
-            <button onclick="revertToDefaultKeys()">Revert to Default</button>
+            <div class="button-container">
+                <button id="dark-mode-toggle">Toggle Dark Mode</button>
+                <button id="dark-mode-toggle" onclick="revertToDefaultKeys()">Revert to Default</button>
+            </div>
           </div>
           
         </div>
